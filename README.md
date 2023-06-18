@@ -20,7 +20,7 @@ Refer to `issue_template_ex_4777.pdf`:
 7. If you need the 'Details' section, enter markdown text here. If not, completely delete and it won't show up.
 8. Enter the 'Overview' section using markdown formatting. Note that due to internal formatting, the quotes are escaped for "Tools", and the values `tools` and `technologies` have **triple** backticks.
 9. Enter the 'Action Items' using markdown formatting. Note to make sure you have the correct path to the {FILE_NAME} and use the {FILE_ACTION} variable.  FILE_ACTION[0] == before, FILE_ACTION[1] == after.
-10. Enter the 'Resources / Instructions' using standard markdown text.
+10. Enter the 'Resources / Instructions' using standard markdown text.  
 When you are done, save the PDF with a unique name, and make sure line 23 of the .py file references the correct file name.
     
 ![issue_template_ex_4777](https://github.com/t-will-gillis/HfLA-Issue-Generator/assets/40799239/92748787-e229-49de-a897-ae6f6843cb55)
