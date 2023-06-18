@@ -27,7 +27,7 @@ Refer to `issue_template_ex_4777.pdf`:
 ![issue_template_ex_4777](https://github.com/t-will-gillis/HfLA-Issue-Generator/assets/40799239/92748787-e229-49de-a897-ae6f6843cb55)
 
 ## Run the Python file
-Run this like a typical python file, i.e. `python auto_generate_issue_p.py`. The interface is self-explanatory, and your will probably need to troubleshoot.
+Run this like a typical python file, i.e. `python auto_generate_issue_p.py`. The interface is self-explanatory, and you will probably need to troubleshoot.
 
 ## Additional features 
-Additional features are likely coming, if there seems to be interest...
+Additional features might be coming, if there seems to be interest...
