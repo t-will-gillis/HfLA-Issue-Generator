@@ -109,7 +109,6 @@ def generate_issue(num):
 
         stopwatch = ['\\','-','/','|']
         while seconds > 0:
-            timer = datetime.timedelta(seconds)
 
             # Prints the stopwatch
             print('HOLDING '+ stopwatch[int(4*seconds%4)], end='\r')
