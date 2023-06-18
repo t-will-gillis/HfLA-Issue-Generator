@@ -3,7 +3,7 @@ Python &amp; PDF for generating multiple issues at same time
 
 ## Copy files to your local repo
 1. Make sure you have Python installed locally or this won't run. (At least yet.)
-2. Copy both the `auto_generate_issue_p.py` and `issue_template_blank` to your local.
+2. Copy both the `auto_generate_issue_p.py` and `issue_template_blank.pdf` to your local.
    
 ## Enter data in the PDF
 Refer to `issue_template_ex_4777.pdf`:
@@ -21,7 +21,8 @@ Refer to `issue_template_ex_4777.pdf`:
 8. Enter the 'Overview' section using markdown formatting. Note that due to internal formatting, the quotes are escaped for "Tools", and the values `tools` and `technologies` have **triple** backticks.
 9. Enter the 'Action Items' using markdown formatting. Note to make sure you have the correct path to the {FILE_NAME} and use the {FILE_ACTION} variable.  FILE_ACTION[0] == before, FILE_ACTION[1] == after.
 10. Enter the 'Resources / Instructions' using standard markdown text.  
-When you are done, save the PDF with a unique name, and make sure line 23 of the .py file references the correct file name.
+
+11. When you are done, save the PDF with a unique name, and make sure line 23 of the .py file references the correct .pdf file name.
     
 ![issue_template_ex_4777](https://github.com/t-will-gillis/HfLA-Issue-Generator/assets/40799239/92748787-e229-49de-a897-ae6f6843cb55)
 
