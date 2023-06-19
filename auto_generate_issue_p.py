@@ -106,17 +106,17 @@ def generate_issue(num):
  
     # Sleeps for 5 seconds between generating issues
     def countdown(seconds):
-
-        stopwatch = ['\\','-','/','|']
+        
         while seconds > 0:
 
             # Prints the stopwatch
-            print('HOLDING '+ stopwatch[int(4*seconds%4)], end='\r')
-
+            print('HOLDING' + '.'*(20 - (int(4*seconds))), end='\r')
+            
             # Delays the program and decrements by one third second
-            time.sleep(.33)
-            seconds -= .33
+            time.sleep(.25)
+            seconds -= .25
 
+        print(f'HOLDING.....................Ready!')
         print(f'Generating issue {num} of total {len(saved_templates)}:', '\r')
 
     countdown(5)
