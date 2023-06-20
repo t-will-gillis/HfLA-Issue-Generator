@@ -11,7 +11,7 @@ Refer to the example template below:
 1. Input your GitHub handle
 2. Enter the secret for your repo
 3. Enter the labels you want on the issues to be generated. Make sure labels match HfLA's repo, place in quotes, comma-separate, and enter in a continuous line.
-4. This is the project payload. It is a dictionary that consists of the name of each file, plus the before and after changes, again with punctuation as shown and written continuously:  
+4. This is the project payload. It is a dictionary that consists of the name of each file that needs to be changed, plus the before and after changes, again with punctuation as shown and written continuously (no newlines):  
     `{ "filename_1.exp":(before, after), "filename_2.exp":(before, after), "filename_3.exp: (before, after) }`
    This dictionary will populate the {FILE_NAME} and {FILE_ACTION} variables for each separate issue. See following.
 5. Input the title and use the exact reference {FILE_NAME} so that your issues will each be generated with a unique title:  
