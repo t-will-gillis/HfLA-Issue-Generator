@@ -104,22 +104,24 @@ def generate_issue(num):
     data = ast.literal_eval('{'+saved_templates[int(num)]+'}')
 
  
-    # Sleeps for 5 seconds between generating issues
-    def countdown(seconds):
-        
-        while seconds > 0:
+    # Sleeps for x seconds between generating issues
+    def countdown(secs):
 
-            # Prints the stopwatch
-            print('HOLDING' + '.'*(20 - (int(4*seconds))), end='\r')
+        i = 0
+        while secs > 0:
+
+            # Prints the timer
+            print('HOLDING' + '.' * i, end='\r')
             
-            # Delays the program and decrements by one third second
+            # Delays the program and decrements by quarter second
             time.sleep(.25)
-            seconds -= .25
+            secs -= .25
+            i += 1
 
-        print(f'HOLDING.....................Ready!')
+        print('HOLDING' + '.' * i +'Ready!')
         print(f'Generating issue {num} of total {len(saved_templates)}:', '\r')
 
-    countdown(5)
+    countdown(7)
 
         
     
