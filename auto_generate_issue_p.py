@@ -23,7 +23,7 @@ reader = ''
 reader = PdfReader("issue_template.pdf")
 dict = reader.get_form_text_fields()
 
-print(dict['labels'] + '\n\n\n')
+# print(dict['labels'] + '\n\n\n')
 
 
 
@@ -169,14 +169,14 @@ while response == False:
         else:
             raise ValueError
     except ValueError:
-        print('Retry or e(x)it: ')
+        print('Retry or e[x]it: ')
   
     pprint(saved_templates[which])
     rvw_temp = input(f'\nThis is the template that will be generated in {repo}\nContinue to generate issue? ')
     if rvw_temp.lower() == 'y':
         generate_issue(which)
     else:
-        qstn = input(f'Enter [y]es to start over or e[x]it to quit: ')
+        qstn = input(f'Enter [y]es to start over or e[x]it: ')
         if qstn.lower() == 'y':
             continue
         else:
