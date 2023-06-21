@@ -23,7 +23,7 @@ reader = ''
 reader = PdfReader("issue_template.pdf")
 dict = reader.get_form_text_fields()
 
-print(dict['labels'] + '\n\n\n')
+# print(dict['labels'] + '\n\n\n')
 
 
 
@@ -104,22 +104,24 @@ def generate_issue(num):
     data = ast.literal_eval('{'+saved_templates[int(num)]+'}')
 
  
-    # Sleeps for 5 seconds between generating issues
-    def countdown(seconds):
-        
-        while seconds > 0:
+    # Sleeps for x seconds between generating issues
+    def countdown(secs):
 
-            # Prints the stopwatch
-            print('HOLDING' + '.'*(20 - (int(4*seconds))), end='\r')
+        i = 0
+        while secs > 0:
+
+            # Prints the timer
+            print('HOLDING' + '.' * i, end='\r')
             
-            # Delays the program and decrements by one third second
+            # Delays the program and decrements by quarter second
             time.sleep(.25)
-            seconds -= .25
+            secs -= .25
+            i += 1
 
-        print(f'HOLDING.....................Ready!')
+        print('HOLDING' + '.' * i +'Ready!')
         print(f'Generating issue {num} of total {len(saved_templates)}:', '\r')
 
-    countdown(5)
+    countdown(7)
 
         
     
@@ -169,14 +171,14 @@ while response == False:
         else:
             raise ValueError
     except ValueError:
-        print('Retry or e(x)it: ')
+        print('Retry or e[x]it: ')
   
     pprint(saved_templates[which])
     rvw_temp = input(f'\nThis is the template that will be generated in {repo}\nContinue to generate issue? ')
     if rvw_temp.lower() == 'y':
         generate_issue(which)
     else:
-        qstn = input(f'Enter [y]es to start over or e[x]it to quit: ')
+        qstn = input(f'Enter [y]es to start over or e[x]it: ')
         if qstn.lower() == 'y':
             continue
         else:
