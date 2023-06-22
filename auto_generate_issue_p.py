@@ -42,8 +42,8 @@ def create_json_template(FILE_NAME, FILE_ACTION):
     """
     Create body of template
     """ 
-    DEPENDENCY = '### Dependency\n' + dict['dependency'] if dict['dependency'] != None else ''
-    DETAILS = '### Details\n' + dict['details'] if dict['details'] != None else ''
+    DEPENDENCY = '### Dependency\n' + dict['dependency'] if dict['dependency'] else ''
+    DETAILS = '### Details\n' + dict['details'] if dict['details'] else ''
     ACTIONS = (dict['action_items']).replace('{FILE_NAME}', FILE_NAME).replace('{FILE_ACTION}', INSERT)
     RESOURCES = (dict['resources'])
 
@@ -139,7 +139,7 @@ FUTURE
 """
 repo = str(dict['github_handle']) 
 repo_qstn = True
-while repo_qstn == True:
+while repo_qstn:
     
     repo_qstn = input(f'The working repo is set to: {repo}. Do you want to switch? ')
     repo = str(dict['github_handle']) if repo_qstn.lower() == 'n' else 'hackforla'
@@ -152,7 +152,7 @@ while repo_qstn == True:
 Generate the issues
 """
 response = False
-while response == False:
+while response:
 
     which_one = input(f"\n\nPrepare which number (0 to {len(saved_templates)-1}, [A]ll, or e[x]it)? ")
     try:
