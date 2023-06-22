@@ -31,7 +31,7 @@ Run this like a typical python file, i.e. `python auto_generate_issue_p.py`. The
 
 ## Additional features 
 Additional features might be coming, if there seems to be interest... Some possibilities:
-- Trigger this from a GitHub Action
-- Include dropdown, multiselection list prepopulated with all of HfLA's labels.
-- Revise {FILE_ACTION} into {BEFORE} and {AFTER}
-- Attach Python file for searching HfLA's website, and returning a list of filenames matching features that need to change, along with the existing/ BEFORE and the intended final/ AFTER states.
+- [ ] Trigger this from a GitHub Action
+- [x] *done*  ~Include dropdown, multiselection list prepopulated with all of HfLA's labels.~
+- [ ] Revise {FILE_ACTION} into {BEFORE} and {AFTER}
+- [ ] Attach Python file for searching HfLA's website, and returning a list of filenames matching features that need to change, along with the existing/ BEFORE and the intended final/ AFTER states.
