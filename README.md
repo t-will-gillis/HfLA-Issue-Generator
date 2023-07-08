@@ -19,7 +19,7 @@ Refer to the example template below:
 6. If you need the 'Dependency' section, enter markdown text here. If not, completely delete and it won't show up. Note that until you generate the final issues, you will want to use `#xxxx` as the dependency. If you use the actual dependency's issue number, each of your test issues will be linked to the actual dependency.
 7. If you need the 'Details' section, enter markdown text here. If not, completely delete and it won't show up.
 8. Enter the 'Overview' section using markdown formatting. In this example, note that due to internal formatting the quotes are escaped for "Tools", and the values `tools` and `technologies` have **triple** backticks.
-9. Enter the 'Action Items' using markdown formatting. Note to make sure you have the correct path to the {FILE_NAME} and use the {FILE_ACTION} variable.  FILE_ACTION[0] == before, FILE_ACTION[1] == after.
+9. Enter the 'Action Items' using markdown formatting. Note to make sure you have the correct path to the {FILE_NAME} and use the {BEFORE} and {AFTER} variables. 
 10. Enter the 'Resources / Instructions' using standard markdown text.  
 
 11. When you are done, save the PDF with a unique name, and make sure line 23 of the .py file references the correct .pdf file name.
@@ -33,5 +33,5 @@ Run this like a typical python file, i.e. `python auto_generate_issue_p.py`. The
 Additional features might be coming, if there seems to be interest... Some possibilities:
 - [ ] Trigger this from a GitHub Action
 - [x] *done*  ~Include dropdown, multiselection list prepopulated with all of HfLA's labels.~
-- [ ] Revise {FILE_ACTION} into {BEFORE} and {AFTER}
+- [x] *done*  ~Revise {FILE_ACTION} into {BEFORE} and {AFTER}~
 - [ ] Attach Python file for searching HfLA's website, and returning a list of filenames matching features that need to change, along with the existing/ BEFORE and the intended final/ AFTER states.
