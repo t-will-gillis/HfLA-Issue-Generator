@@ -33,17 +33,17 @@ Create json_template body then head
 
 def create_json_template(FILE_NAME, FILE_ACTION):
 
-    before = "```\n" + FILE_ACTION[0] + "\n```"
-    after = "```\n" + FILE_ACTION[1] + "\n```"
-    INSERT = before + '\nto:\n' + after
+    before = f"```\n{FILE_ACTION[0]}\n```"
+    after = f"```\n{FILE_ACTION[1]}\n```"
+    INSERT = f"{before}\nto:\n{after}"
     # pprint(INSERT)
 
 
     """
     Create body of template
     """ 
-    DEPENDENCY = '### Dependency\n' + dict['dependency'] if dict['dependency'] else ''
-    DETAILS = '### Details\n' + dict['details'] if dict['details'] else ''
+    DEPENDENCY = f"### Dependency \n{dict['dependency']}" if dict['dependency'] else ""
+    DETAILS = f"### Details \n{dict['details']}" if dict['details'] else ""
     ACTIONS = (dict['action_items']).replace('{FILE_NAME}', FILE_NAME).replace('{FILE_ACTION}', INSERT)
     RESOURCES = (dict['resources'])
 
@@ -62,8 +62,7 @@ def create_json_template(FILE_NAME, FILE_ACTION):
 """
     body_lines = ''
     for line in body.splitlines():
-        # body_lines += line + '\\' + '\\n'
-        body_lines += line +  '\\n'
+        body_lines += line + '\\n'
     
 
     """
