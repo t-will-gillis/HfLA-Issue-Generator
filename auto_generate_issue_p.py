@@ -31,12 +31,7 @@ dict = reader.get_form_text_fields()
 Create json_template body then head
 """
 
-def create_json_template(FILE_NAME, FILE_ACTION):
-
-    before = f"```\n{FILE_ACTION[0]}\n```"
-    after = f"```\n{FILE_ACTION[1]}\n```"
-    INSERT = f"{before}\nto:\n{after}"
-    # pprint(INSERT)
+def create_json_template(FILE_NAME, BEFORE, AFTER):
 
 
     """
@@ -44,7 +39,7 @@ def create_json_template(FILE_NAME, FILE_ACTION):
     """ 
     DEPENDENCY = f"### Dependency \n{dict['dependency']}" if dict['dependency'] else ""
     DETAILS = f"### Details \n{dict['details']}" if dict['details'] else ""
-    ACTIONS = (dict['action_items']).replace('{FILE_NAME}', FILE_NAME).replace('{FILE_ACTION}', INSERT)
+    ACTIONS = (dict['action_items']).replace('{FILE_NAME}', FILE_NAME).replace('{BEFORE}', BEFORE).replace('{AFTER}', AFTER)
     RESOURCES = (dict['resources'])
 
     body = f"""
