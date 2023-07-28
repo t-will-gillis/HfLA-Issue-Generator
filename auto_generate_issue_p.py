@@ -2,17 +2,17 @@
 Import modules
 """
 
-from os import listdir
-from os.path import isfile, join
-from itertools import cycle
-import re
+
 import requests
 import json
 import ast
 from PyPDF2 import PdfReader
 from pprint import pprint
-import time, datetime
-
+import time
+# from itertools import cycle
+# from os import listdir
+# from os.path import isfile, join
+# import re
 
 
 """
