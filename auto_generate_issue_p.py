@@ -16,22 +16,15 @@ def main():
     then sends to GitHub for creation of a new issue in user-specified repo 
     """
 
-    def read_pdf(pdf_file):
-
+    def read_pdf_template(pdf_template):
         """
         Read attached pdf using PyPDF2, define variables for importing
         """
         reader = ''
-        reader = PdfReader("issue_template.pdf")
-        dict = reader.get_form_text_fields()
-        return dict
+        reader = PdfReader(pdf_template)
+        return reader.get_form_text_fields()
 
-
-
-    dict = read_pdf("issue_template.pdf")
-
-
-
+ 
 
     def create_json_template(import_key, import_value):
         """
@@ -86,7 +79,7 @@ def main():
         
         return json_template
 
-
+    dict = read_pdf_template("issue_template.pdf")
 
     """
     Evaluate imported pdf, generate unique template
