@@ -26,17 +26,31 @@ def read_pdf_template(pdf_template):
 
 
 
+def set_repo():
+
+    global repo
+    repo = str(dict['github_handle']) 
+    repo_qstn = True
+    while repo_qstn:
+        
+        repo_qstn = input(f'The working repo is set to: {repo}. Switch? ')
+        repo = str(dict['github_handle']) if repo_qstn.lower() == 'n' else 'hackforla'
+        print(f'Proceeding with working repo: {repo}')
+        break
+
+
+
 def evaluate_template():
     """
     Evaluate imported pdf, generate unique templates
     """
+    global saved_templates
     saved_templates = []
     all_files = ast.literal_eval(str(dict["file_info"]))
     pprint(all_files)
     for k, v in all_files.items():
         saved_templates.append(create_json_template(k, v))
 
-    return saved_templates
 
 
 def create_json_template(FILE_NAME, temp_value):
@@ -92,22 +106,10 @@ def create_json_template(FILE_NAME, temp_value):
 
 
 
-def set_repo():
-
-    global repo
-    repo = str(dict['github_handle']) 
-    repo_qstn = True
-    while repo_qstn:
-        
-        repo_qstn = input(f'The working repo is set to: {repo}. Switch? ')
-        repo = str(dict['github_handle']) if repo_qstn.lower() == 'n' else 'hackforla'
-        print(f'Proceeding with working repo: {repo}')
-        break
-
-
-
 def generate_issue(num):
-
+    """
+    Generate issue
+    """
     token = dict['secret']
     headers = {"Authorization": "token {}".format(token)}
     data = ast.literal_eval('{'+saved_templates[int(num)]+'}')
@@ -120,14 +122,9 @@ def generate_issue(num):
     response = requests.post(url, data=json.dumps(data), headers=headers)
     if response.status_code == 201:
         print(f"Success! Created issue {num} of {len(saved_templates)}")
-    # print(response.content)
+    print(response.content)
 
 
-
-
-
-
-    
 
 def main():
     """
@@ -137,7 +134,7 @@ def main():
     print('Issue Generator')
 
     
-    pdf_template = "issue_template_blank.pdf"
+    pdf_template = "issue_template_ex_4777.pdf"
 
     """
     --> TO DO (optionally) Code to allow change to pdf template file, search, etc.
@@ -156,15 +153,13 @@ def main():
     
     read_pdf_template(pdf_template)
     set_repo()
-    saved_templates = evaluate_template()
-    
-
-    
+    evaluate_template()
+   
 
     """
-    Generate the issues
+    Prepare the issues
     """
-    response = False
+    response = True
     while response:
 
         which_one = input(f"\n\nPrepare which number (0 to {len(saved_templates)-1}, [A]ll, or e[x]it)? ")
@@ -172,7 +167,7 @@ def main():
             if which_one == 'x':
                 break
             which = int(which_one)
-            if which >= 0 and which < len(saved_templates):
+            if 0 <= which < len(saved_templates):
                 print(f'Displaying template {which_one}\n')
             elif which_one == 'A':
                 proceed = input('Generating All- are you sure? ')
@@ -196,6 +191,7 @@ def main():
                 continue
             else:
                 break
+
 
 
 if __name__ == "__main__":
